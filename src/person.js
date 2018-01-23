@@ -9,4 +9,6 @@ const canDrink = (num) => {
     return num >=21 ? 'Yes' : 'No'
 }
 
+export default (num) => num>=65;
+
 export { isAdult, canDrink}
