@@ -65,9 +65,49 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-console.log('App is running!');
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(2);
+// import { square, add } from './utils.js';
+
+
+// console.log('App is running!');
+
+
+// console.log(square(4));
+// console.log(add(413254, 549678));
+
+
+
+
+
+
+console.log('Am i adult: ' + __WEBPACK_IMPORTED_MODULE_0__person__["b" /* isAdult */](25));
+console.log('Can i drink:  ' + __WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](18));
+
+
+/***/ }),
+/* 1 */,
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+console.log('Person.js trci!');
+
+
+const isAdult = (num) => {
+    return num >=18 ? 'Yes' : 'No'
+}
+
+const canDrink = (num) => {
+    return num >=21 ? 'Yes' : 'No'
+}
+
+
 
 /***/ })
 /******/ ]);
