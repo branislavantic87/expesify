@@ -19020,21 +19020,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var IndecisionApp = function (_React$Component) {
     _inherits(IndecisionApp, _React$Component);
 
-    function IndecisionApp(props) {
+    function IndecisionApp() {
         _classCallCheck(this, IndecisionApp);
 
-        var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
-
-        _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
-        _this.handlePick = _this.handlePick.bind(_this);
-        _this.handleAddOption = _this.handleAddOption.bind(_this);
-        _this.handleDeleteOne = _this.handleDeleteOne.bind(_this);
-        _this.handleModal = _this.handleModal.bind(_this);
-        _this.state = {
-            options: [],
-            selectedOption: undefined
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).apply(this, arguments));
     }
 
     _createClass(IndecisionApp, [{
@@ -19042,11 +19031,11 @@ var IndecisionApp = function (_React$Component) {
         value: function componentDidMount() {
             try {
                 var json = localStorage.getItem('options');
-                var options = JSON.parse(json);
+                var _options = JSON.parse(json);
 
-                if (options) {
+                if (_options) {
                     this.setState(function () {
-                        return { options: options };
+                        return { options: _options };
                     });
                 }
             } catch (e) {}
@@ -19096,7 +19085,7 @@ var IndecisionApp = function (_React$Component) {
         key: 'handleModal',
         value: function handleModal() {
             this.setState(function () {
-                return { selectedOption: false };
+                return { selectedOption: undefined };
             });
         }
     }, {

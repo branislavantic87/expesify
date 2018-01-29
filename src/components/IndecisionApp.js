@@ -7,17 +7,9 @@ import OptionModal from './OptionModal';
 
 
 export default class IndecisionApp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handlePick = this.handlePick.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleDeleteOne = this.handleDeleteOne.bind(this);
-        this.handleModal = this.handleModal.bind(this);
-        this.state = {
-            options: [],
-            selectedOption: undefined
-        }
+    state =  {
+        options: [],
+        selectedOption: undefined
     }
     componentDidMount() {
         try {
@@ -44,23 +36,23 @@ export default class IndecisionApp extends React.Component {
         console.log('saving data')
     }
 
-    handleDeleteOptions() {
+    handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }))
     }
-    handleDeleteOne(optionToRemove) {
+    handleDeleteOne = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }))
     }
-    handlePick() {
+    handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length)
         const option = this.state.options[randomNum]
-        this.setState(() => ({selectedOption: true}))
+        this.setState(() => ({selectedOption: option}))
     }
-    handleModal(){
-        this.setState(() => ({selectedOption: false}))
+    handleModal = () => {
+        this.setState(() => ({selectedOption: undefined}))
     }
-    handleAddOption(option) {
+    handleAddOption = (option) => {
         if (!option) {
             return 'Enter valid value to add Item';
         } else if (this.state.options.indexOf(option) > -1) {
