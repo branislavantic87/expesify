@@ -5,6 +5,7 @@ import NotFound from '../components/NotFound';
 import HomePage from '../components/HomePage';
 import Contact from '../components/Contact';
 import Portfolio from '../components/Portfolio';
+import PortfolioShow from '../components/PortfolioShow';
 
 
 
@@ -14,8 +15,9 @@ const AppRouter = () => (
             <Header />
             <Switch>
                 <Route path="/" component={HomePage} exact={true} />
-                <Route path="/portfolio" component={Portfolio}/>
+                <Route path="/portfolio" component={Portfolio} exact={true}/>
                 <Route path="/contact" component={Contact}/>
+                <Route path="/portfolio/:id" component={PortfolioShow}/>
                 <Route component={NotFound} />
             </Switch>
         </div>
