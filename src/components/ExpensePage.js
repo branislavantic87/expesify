@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from './Header';
+import ExpenseList from './ExpenseList'
+import ExpenseListFilters from './ExpenseListFilters';
 
 const ExpensePage = () => (
     <div>
         <Header />
-        Ovo home page!
+        <ExpenseListFilters />
+        <ExpenseList />
     </div>
 )
 
